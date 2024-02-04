@@ -1,0 +1,1 @@
+draw_sprite(spr_clubs_88x124, 0, x, y);
