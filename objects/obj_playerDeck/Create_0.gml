@@ -23,4 +23,4 @@ ds_map_add(ds_cardSuit, "Spades", 3);
 data = ds_map_create();
 ds_map_add(data, "cards", []);
 	
-sendMapOverUDP("127.0.0.1", 8080, 100, data, msgType.SET_CARD_STAT);
+//sendMapOverUDP("127.0.0.1", 8080, 100, data, msgType.SET_CARD_STAT);

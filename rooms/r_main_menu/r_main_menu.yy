@@ -17,7 +17,7 @@
   ],
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Managers","instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5E308277","properties":[],"isDnd":false,"objectId":{"name":"obj_network","path":"objects/obj_network/obj_network.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-16.0,"y":27.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_22DF28E2","properties":[],"isDnd":false,"objectId":{"name":"obj_network","path":"objects/obj_network/obj_network.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-32.0,"y":32.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4E523CD2","properties":[],"isDnd":false,"objectId":{"name":"obj_main_menu","path":"objects/obj_main_menu/obj_main_menu.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":-16.0,"y":0.0,},
@@ -31,7 +31,7 @@
   "inheritCode": false,
   "instanceCreationOrder": [
     {"name":"inst_4E523CD2","path":"rooms/r_main_menu/r_main_menu.yy",},
-    {"name":"inst_5E308277","path":"rooms/r_main_menu/r_main_menu.yy",},
+    {"name":"inst_22DF28E2","path":"rooms/r_main_menu/r_main_menu.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

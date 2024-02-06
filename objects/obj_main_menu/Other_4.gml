@@ -1,41 +1,40 @@
-/// @description Insert description here
-// You can write your code in this editor
+audio_play_sound(mp3_op,0,1,0.1,4,0.8);
 
-
-
-
-
-
-
-
-
-
-audio_play_sound(mp3_op,0,1,1,4,0.8);
-
-enum menu_page
-{
-	main,
-	host,
-	join
-}
-
-ds_main_menu =
+main_menu =
 [
-	["HOST", function(){scr_host_game(menu_page.host)}],
-	["JOIN", function(){scr_join_game(menu_page.join)}]
+	["HOST", function()
+	{
+		data = ds_map_create();
+		ds_map_add(data, "hostNumber", undefined);
+		ds_map_add(data, "playerNumber", undefined);
+		ds_map_add(data, "username", "sicknezz");
+		sendMapOverUDP("127.0.0.1", 8080, 100, data, msgType.CREATE_HOST);
+		
+		current_page = host_menu;
+	}],
+	["JOIN", function()
+	{
+		
+	}]
 ];
 
-ds_host_menu = 
+host_menu =
 [
-	["HOST", function(){scr_host_game(menu_page.host)}],
+	["HOST", function()
+	{
+		
+	}],
+	["BACK", function()
+	{
+		data = ds_map_create();
+		ds_map_add(data, "hostNumber", global.hostNumber);
+		sendMapOverUDP("127.0.0.1", 8080, 100, data, msgType.STOP_HOST);
+		
+		current_page = main_menu;
+	}]
 ];
 
-menus = [ds_main_menu, ds_host_menu]; 
-
-
-
-
-current_menu_page = menus[menu_page.main];
+current_page = main_menu;
 selected_option_index = 0;
 
 

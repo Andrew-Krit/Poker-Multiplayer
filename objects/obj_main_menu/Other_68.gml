@@ -13,6 +13,5 @@ if(async_load[? "size"] > 0)
 		
 		global.hostNumber = _hostNumber;
 		global.playerNumber = _playerNumber;
-		room_goto(r_game_field)
 	}
 }
