@@ -1,9 +1,10 @@
-function sendMapOverUDP(ip, port, size, map)
+function sendMapOverUDP(ip, port, size, map, type)
 {
 	network_connect_raw(global.client, ip, port);
 	var player_buffer = buffer_create(100, buffer_fixed, 100);
-	var dataJson = json_encode(map);
 	
+	ds_map_add(map,"type", type);
+	var dataJson = json_encode(map);
 	ds_map_destroy(map);
 	
 	buffer_seek(player_buffer, buffer_seek_start, 0);

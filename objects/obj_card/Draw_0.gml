@@ -1,1 +1,4 @@
-draw_sprite(spr_clubs_88x124, 0, x, y);
+if(sprite_index != undefined)
+{
+	draw_sprite(sprite_index, image_index, x, y);
+}
