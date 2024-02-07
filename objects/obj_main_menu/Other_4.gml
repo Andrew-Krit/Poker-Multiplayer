@@ -21,6 +21,7 @@ main_menu =
 host_menu =
 [
 	["HOST", function()
+	
 	{
 		
 	}],
