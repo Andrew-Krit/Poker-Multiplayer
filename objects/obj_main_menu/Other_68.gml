@@ -14,4 +14,22 @@ if(async_load[? "size"] > 0)
 		global.hostNumber = _hostNumber;
 		global.playerNumber = _playerNumber;
 	}
+	
+	if(ds_map_find_value(_response, "type") == msgType.STOP_HOST)
+	{
+		var _res = ds_map_find_value(_response, "res");
+		
+		if(_res == "stopped")
+		{
+			is_host_stopped = true;
+			current_page = main_menu;
+		}
+	}
+	
+	
+	if(ds_map_find_value(_response, "type") == msgType.GET_HOSTS)
+	{
+		var _hosts = ds_map_find_value(_response, "hosts");
+		
+	}
 }

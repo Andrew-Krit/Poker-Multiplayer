@@ -1,6 +1,6 @@
-var dgram = require("dgram");
-var server = dgram.createSocket("udp4");
-var player = require("./player.js");
+const dgram = require("dgram");
+const server = dgram.createSocket("udp4");
+
 const Player = require("./player.js");
 
 var hosts = [];
@@ -11,7 +11,7 @@ const messageType =
     JOIN_HOST : 1,
     STOP_HOST : 2,
     GET_NEW_PLAYERS : 3,
-
+    GET_HOSTS : 4
 }
 
 server.on('error', (error) => 
@@ -48,9 +48,14 @@ server.on('message', (msg, rinfo) =>
         case messageType.GET_NEW_PLAYERS:
             get_new_players(data, rinfo);
             break;
+            
+        case messageType.GET_HOSTS:
+
+            break;
 
         default:
-            console.log('default message!!!!!');
+            console.log('Package received: unknown message type!');
+            console.log(data);
             break;
     }
 
@@ -59,6 +64,12 @@ server.on('message', (msg, rinfo) =>
 function get_new_players(data, rinfo)
 {
 
+}
+
+function get_hosts(data, rinfo)
+{
+    data.hosts = hosts;
+    server.send(JSON.stringify(data), rinfo.port, rinfo.address);
 }
 
 function create_host(data, rinfo)
@@ -78,6 +89,8 @@ function stop_host(data, rinfo)
     console.log("host stopped!");
     var host_to_stop = hosts.indexOf(data.hostNumber);
     hosts.splice(host_to_stop, 1);
+    data.res = "stopped";
+    server.send(JSON.stringify(data), rinfo.port, rinfo.address);
     console.table(hosts);
 }
 

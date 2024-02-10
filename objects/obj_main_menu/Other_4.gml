@@ -14,26 +14,39 @@ main_menu =
 	}],
 	["JOIN", function()
 	{
-		
+		current_page = join_menu;
 	}]
 ];
 
 host_menu =
 [
 	["HOST", function()
-	
 	{
 		
 	}],
 	["BACK", function()
 	{
-		data = ds_map_create();
-		ds_map_add(data, "hostNumber", global.hostNumber);
-		sendMapOverUDP("127.0.0.1", 8080, 100, data, msgType.STOP_HOST);
+		should_host_stop = true;
+	}]
+];
+
+join_menu =
+[
+	["JOIN", function()
+	{
 		
+	}],
+	["BACK", function()
+	{
 		current_page = main_menu;
 	}]
 ];
+
+is_host_stopped = false;
+should_host_stop = false;
+
+did_we_received_hosts = false;
+should_i_try_to_get_hosts = true;
 
 current_page = main_menu;
 selected_option_index = 0;
