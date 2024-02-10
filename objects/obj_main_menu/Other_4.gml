@@ -1,4 +1,4 @@
-audio_play_sound(mp3_op,0,1,0.1,4,0.8);
+//audio_play_sound(mp3_op,0,1,0.1,4,0.8);
 
 main_menu =
 [
@@ -32,14 +32,7 @@ host_menu =
 
 join_menu =
 [
-	["JOIN", function()
-	{
-		
-	}],
-	["BACK", function()
-	{
-		current_page = main_menu;
-	}]
+
 ];
 
 is_host_stopped = false;

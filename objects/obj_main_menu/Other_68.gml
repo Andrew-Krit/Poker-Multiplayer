@@ -12,7 +12,7 @@ if(async_load[? "size"] > 0)
 		var _playerNumber = ds_map_find_value(_response, "playerNumber");
 		
 		global.hostNumber = _hostNumber;
-		global.playerNumber = _playerNumber;
+		global.playerNumber = _playerNumber
 	}
 	
 	if(ds_map_find_value(_response, "type") == msgType.STOP_HOST)
@@ -30,6 +30,18 @@ if(async_load[? "size"] > 0)
 	if(ds_map_find_value(_response, "type") == msgType.GET_HOSTS)
 	{
 		var _hosts = ds_map_find_value(_response, "hosts");
+		number_of_hosts = ds_list_size(_hosts);
 		
+		for(var i = 0; i < number_of_hosts; i++)
+		{
+			var _host = ds_list_find_value(_hosts, i);
+			//number_of_players = ds_list_size(_host);
+			array_push(join_menu,	["host #"+ string(i), function(){}]);
+			did_we_received_hosts = true;
+		}
+		array_push(join_menu, 	["BACK", function()
+		{
+			current_page = main_menu;
+		}]);
 	}
 }

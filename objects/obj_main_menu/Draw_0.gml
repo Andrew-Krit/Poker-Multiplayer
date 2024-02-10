@@ -1,14 +1,16 @@
-for (var i = 0; i < array_length(current_page); i++)
+if(array_length(current_page) > 0)
 {
-	var _color = "[#FFFFFF]";
-	
-	if(selected_option_index == i)
+	for (var i = 0; i < array_length(current_page); i++)
 	{
-		_color = "[#FF0000]";
-	}
+		var _color = "[#FFFFFF]";
 	
-	var _option = scribble(_color + "[scale,3][fnt_arial]" + current_page[i][0]);
-	_option.align(fa_center);
-	_option.draw(room_width/2, room_height/2 + i*100);
+		if(selected_option_index == i)
+		{
+			_color = "[#FF0000]";
+		}
+	
+		var _option = scribble(_color + "[scale,3][fnt_arial]" + current_page[i][0]);
+		_option.align(fa_center);
+		_option.draw(room_width/2, room_height/2 + i*100);
+	}
 }
-

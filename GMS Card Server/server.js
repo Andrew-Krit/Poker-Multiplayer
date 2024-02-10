@@ -50,7 +50,7 @@ server.on('message', (msg, rinfo) =>
             break;
             
         case messageType.GET_HOSTS:
-
+            get_hosts(data, rinfo);
             break;
 
         default:

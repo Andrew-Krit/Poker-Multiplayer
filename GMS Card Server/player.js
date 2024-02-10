@@ -5,7 +5,6 @@ class Player
         this.id = id;
         this.name = name;
     }
-    cards = [];
 
     getInfo()
     {
