@@ -70,18 +70,18 @@ function get_hosts(data, rinfo)
 {
     data.hosts = hosts;
     server.send(JSON.stringify(data), rinfo.port, rinfo.address);
+    console.table(JSON.stringify(data));
 }
 
 function create_host(data, rinfo)
 {
     var hostNumber = hosts.length;
-    hosts.push(new Player(0,data.username));
+    hosts.push([new Player(0,data.username)]);
 
     data.hostNumber = hostNumber;
     data.playerNumber = 0;
 
     server.send(JSON.stringify(data), rinfo.port, rinfo.address);
-    console.table(hosts);
 }
 
 function stop_host(data, rinfo)

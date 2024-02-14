@@ -31,11 +31,10 @@ if(async_load[? "size"] > 0)
 	{
 		var _hosts = ds_map_find_value(_response, "hosts");
 		number_of_hosts = ds_list_size(_hosts);
-		
 		for(var i = 0; i < number_of_hosts; i++)
 		{
 			var _host = ds_list_find_value(_hosts, i);
-			//number_of_players = ds_list_size(_host);
+			number_of_players = ds_list_size(_host);
 			array_push(join_menu,	["host #"+ string(i), function(){}]);
 			did_we_received_hosts = true;
 		}
